@@ -1,4 +1,3 @@
-
 import ImageCarousel from '../components/ImageCarousel';
 import ContactButton from '../components/ContactButton';
 
@@ -6,16 +5,18 @@ const Index = () => {
   return (
     <div className="relative min-h-screen">
       <ImageCarousel />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-text-light z-10">
-        <div className="mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center max-w-4xl mx-auto px-4 animate-fade-in">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+        <div className="text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text-light animate-fade-in">
             Experience Luxury Like Never Before
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-center max-w-2xl mx-auto px-4 animate-fade-in opacity-90">
+          <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-text-light animate-fade-in opacity-90">
             Discover a world of elegance and sophistication
           </p>
         </div>
-        <ContactButton />
+        <div className="mt-12">
+          <ContactButton />
+        </div>
       </div>
       
       <div className="bg-primary min-h-screen p-8">
