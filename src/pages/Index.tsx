@@ -6,8 +6,8 @@ const Index = () => {
   return (
     <div className="relative min-h-screen">
       <ImageCarousel />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center max-w-4xl mx-auto px-4 animate-fade-in">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-text-light z-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center max-w-4xl mx-auto px-4 animate-fade-in mb-24">
           Experience Luxury Like Never Before
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-center max-w-2xl mx-auto px-4 animate-fade-in opacity-90">
@@ -16,7 +16,6 @@ const Index = () => {
       </div>
       <ContactButton />
       
-      {/* Additional content section */}
       <div className="bg-primary min-h-screen p-8">
         <div className="max-w-4xl mx-auto space-y-12 py-16">
           <h2 className="text-3xl sm:text-4xl font-semibold text-text text-center">

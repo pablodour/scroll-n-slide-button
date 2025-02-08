@@ -26,13 +26,14 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#F4F5F7",
-          dark: "#E8E9EB",
+          DEFAULT: "#8d6e63",
+          dark: "#4e342e",
         },
         text: {
-          DEFAULT: "#1A1A1A",
-          light: "#4A4A4A",
-        }
+          DEFAULT: "#212121",
+          light: "#e0e0e0",
+        },
+        accent: "#d8c5a6"
       },
       keyframes: {
         "fade-in": {
