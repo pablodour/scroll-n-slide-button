@@ -23,8 +23,8 @@ const ContactButton = () => {
   const buttonClasses = isAtBottom 
     ? 'fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-accent hover:bg-primary shadow-lg backdrop-blur-md'
     : isScrolled 
-    ? 'fixed top-8 right-8 bg-accent hover:bg-primary shadow-lg backdrop-blur-md'
-    : 'fixed top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent hover:bg-primary';
+    ? 'fixed right-8 right-8 bg-accent hover:bg-primary shadow-lg backdrop-blur-md'
+    : 'fixed right-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent hover:bg-primary';
 
   return (
     <button
