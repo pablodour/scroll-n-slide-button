@@ -1,0 +1,14 @@
+.carousel-container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -1,0 +1,32 @@
+.contact-button-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact-button-container.side {
+    right: 20px;
+    bottom: auto;
+    top: 50%;
+}
+
+.contact-button-container.bottom {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 20px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
