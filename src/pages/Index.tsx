@@ -74,6 +74,17 @@ const Index = () => {
               />
             </div>
           </div>
+
+          {/* Conclusion Section */}
+          <div className="text-center space-y-8 py-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-text-light">Begin Your Journey</h2>
+            <p className="text-lg text-text-light max-w-2xl mx-auto">
+              Step into a world where every detail is crafted for your pleasure and comfort. Let us transform your stay into an unforgettable experience of luxury and refinement. Contact us today to start planning your exceptional journey.
+            </p>
+            <div className="pt-8">
+              <ContactButton />
+            </div>
+          </div>
         </div>
       </div>
     </div>
