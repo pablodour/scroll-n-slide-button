@@ -1,4 +1,3 @@
-
 import ImageCarousel from '../components/ImageCarousel';
 import ContactButton from '../components/ContactButton';
 
@@ -6,7 +5,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen">
       <ImageCarousel />
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-start z-10 pt-32">
         <div className="text-center px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text-light animate-fade-in">
             Experience Luxury Like Never Before
