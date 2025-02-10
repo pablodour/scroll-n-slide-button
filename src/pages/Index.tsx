@@ -5,17 +5,14 @@ const Index = () => {
   return (
     <div className="relative min-h-screen">
       <ImageCarousel />
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-        <div className="text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-start z-10 pt-32">
+        <div className="text-center px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text-light animate-fade-in">
             Experience Luxury Like Never Before
           </h1>
           <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-text-light animate-fade-in opacity-90">
             Discover a world of elegance and sophistication
           </p>
-        </div>
-        <div className="mt-12">
-          <ContactButton />
         </div>
       </div>
       
