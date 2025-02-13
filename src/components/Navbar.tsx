@@ -18,6 +18,15 @@ const Navbar = () => {
           <div className="hidden sm:flex sm:space-x-8">
             <button
               onClick={() => {
+                const element = document.getElementById('services');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-[#000000] hover:text-[#CCDDB9] px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => {
                 const element = document.getElementById('about');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
