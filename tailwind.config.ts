@@ -26,38 +26,23 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8d6e63",
-          dark: "#4e342e",
+          DEFAULT: "#CCDDB9",
+          dark: "#b8c9a5",
         },
         text: {
-          DEFAULT: "#212121",
-          light: "#e0e0e0",
+          DEFAULT: "#000000",
+          light: "#FEFDFB",
         },
-        accent: "#d8c5a6"
+        accent: "#D9D9D9"
       },
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
-        },
-        "fade-out": {
-          "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(10px)" }
-        },
-        "slide-up": {
-          "0%": { transform: "translateY(100%)" },
-          "100%": { transform: "translateY(0)" }
-        },
-        "slide-down": {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(0)" }
         }
       },
       animation: {
-        "fade-in": "fade-in 0.5s ease-out",
-        "fade-out": "fade-out 0.5s ease-out",
-        "slide-up": "slide-up 0.5s ease-out",
-        "slide-down": "slide-down 0.5s ease-out"
+        "fade-in": "fade-in 0.5s ease-out"
       }
     },
   },
