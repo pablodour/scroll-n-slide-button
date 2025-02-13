@@ -22,10 +22,10 @@ const ContactButton = () => {
   }, []);
 
   const buttonClasses = isAtBottom 
-    ? 'fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-accent hover:bg-primary shadow-lg backdrop-blur-md'
+    ? 'fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-primary hover:bg-primary-dark shadow-lg backdrop-blur-md'
     : isScrolled 
-    ? 'fixed right-8 bottom-8 bg-accent hover:bg-primary shadow-lg backdrop-blur-md'
-    : 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-accent hover:bg-primary';
+    ? 'fixed right-8 bottom-8 bg-primary hover:bg-primary-dark shadow-lg backdrop-blur-md'
+    : 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-primary hover:bg-primary-dark';
 
   return (
     <button
