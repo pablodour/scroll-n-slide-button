@@ -64,18 +64,6 @@ const Index = () => {
               />
             </div>
           </div>
-
-          {/* Call to Action */}
-          <div className="text-center space-y-8 py-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#000000]">Start Your Fitness Journey</h2>
-            <p className="text-lg text-[#000000] max-w-2xl mx-auto">
-              Ready to transform your life? Let's work together to achieve your fitness goals. 
-              Contact me today to schedule your first session.
-            </p>
-            <div className="pt-8">
-              <ContactButton />
-            </div>
-          </div>
         </div>
       </div>
 
@@ -175,6 +163,17 @@ const Index = () => {
                 <p className="text-[#000000]">Train in a small group setting with up to 5 people. Available as single sessions or weekly plans from 1 to 5 sessions per week. Choose the best option for your group!</p>
               </CardContent>
             </Card>
+          </div>
+          {/* Call to Action */}
+          <div className="text-center space-y-8 py-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#000000]">Start Your Fitness Journey</h2>
+            <p className="text-lg text-[#000000] max-w-2xl mx-auto">
+              Ready to transform your life? Let's work together to achieve your fitness goals. 
+              Contact me today to schedule your first session.
+            </p>
+            <div className="pt-8">
+              <ContactButton />
+            </div>
           </div>
         </div>
       </div>
