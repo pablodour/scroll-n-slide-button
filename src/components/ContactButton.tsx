@@ -18,19 +18,20 @@ const ContactButton = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const buttonClasses = isAtBottom 
-    ? 'fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-primary hover:bg-primary-dark shadow-lg backdrop-blur-md'
+    ? 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-primary hover:bg-primary-dark shadow-lg'
     : isScrolled 
-    ? 'fixed right-8 bottom-8 bg-primary hover:bg-primary-dark shadow-lg backdrop-blur-md'
+    ? 'fixed right-8 bottom-8 bg-primary hover:bg-primary-dark shadow-lg'
     : 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-primary hover:bg-primary-dark';
 
   return (
     <button
       onClick={() => navigate('/contact')}
-      className={`${buttonClasses} transition-all duration-1000 ease-in-out px-6 py-3 rounded-full text-text font-medium hover:scale-105 active:scale-95`}
+      className={`${buttonClasses} transition-all duration-300 ease-in-out px-6 py-3 rounded-full text-text font-medium hover:scale-105 active:scale-95 z-50`}
     >
       Contact Us
     </button>
