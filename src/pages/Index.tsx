@@ -1,4 +1,4 @@
-import ImageCarousel from '../components/ImageCarousel';
+// Index.tsx
 import ContactButton from '../components/ContactButton';
 import Navbar from '../components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,15 +8,27 @@ const Index = () => {
     <div className="relative min-h-screen">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <div className="relative min-h-screen">
-        <ImageCarousel />
+        {/* Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/vide_3d_logo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Optional color overlay to improve text contrast */}
+        <div className="absolute inset-0 bg-[#FEFDFB] opacity-60"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
           <div className="text-center px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text-light animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text animate-fade-in">
               Experience Fitness Like Never Before
             </h1>
-            <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-text-light animate-fade-in opacity-90">
+            <p className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-text animate-fade-in opacity-90">
               Transform your life with personalized training
             </p>
           </div>
@@ -177,6 +189,8 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* Additional Sections (Forms, etc.) can go here */}
     </div>
   );
 };
