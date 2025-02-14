@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import Notification from "../components/Notification";
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Contact = () => {
     trainingType: '',
     sessionType: '',
     packageHours: '',
+    weeklyHours: '',
     dayTime: '',
   });
 
@@ -34,39 +36,43 @@ const Contact = () => {
   ];
 
   const sessionOptions = {
-    "Individual Training (60 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 hours/week)"],
+    "Individual Training (60 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 sessions/week)"],
     "Individual Training (30 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 sessions/week)"],
-    "Duo Training (60 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 hours/week)"],
+    "Duo Training (60 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 sessions/week)"],
     "Duo Training (30 min)": ["Single Session", "Package (5, 10, 20 hours)", "Monthly Subscription (1-5 sessions/week)"],
-    "Small Group Training": ["Single Session", "Weekly Plan (1-5 sessions/week)"]
+    "Small Group Training": ["Single Session", "Monthly Subscription (1-5 sessions/week)"]
   };
 
   const tShirtOptions = ["Men", "Women"];
   const tShirtSizes = ["S", "M", "L", "XL", "XXL"];
   const packageHourOptions = ["5", "10", "20"];
+  const weeklyHoursOptions = ["1", "2", "3", "4", "5"];
   const dayTimeOptions = ["Morning", "Afternoon", "Evening"];
 
   // Function to send email via EmailJS
   const sendEmail = (templateId, variables) => {
-    return emailjs.send('web_alex', templateId, variables, 'YOUR_PUBLIC_KEY');
+    return emailjs.send('web_alex', templateId, variables, 'iQ0PiUkN0BWHBIu-h');
   };
 
   // Handle training form submission
   const handleTrainingSubmit = (e) => {
     e.preventDefault();
-    const templateId = 'template_training';
+    const templateId = 'template_wb1nmij';
     const variables = {
       name: trainingData.name,
       email: trainingData.email,
       trainingType: trainingData.trainingType,
       sessionType: trainingData.sessionType,
       packageHours: trainingData.sessionType === "Package (5, 10, 20 hours)" ? trainingData.packageHours : '',
+      weeklyHours: trainingData.sessionType === "Monthly Subscription (1-5 sessions/week)" ? trainingData.weeklyHours : '',
       dayTime: trainingData.dayTime,
       from_name: trainingData.name,
       to_name: 'Recipient Name',
-      message: `Training registration: ${trainingData.trainingType}, ${trainingData.sessionType}` +
-               (trainingData.sessionType === "Package (5, 10, 20 hours)" ? ` (${trainingData.packageHours} hours)` : '') +
-               `, ${trainingData.dayTime}`,
+      message:
+        `Training registration: ${trainingData.trainingType}, ${trainingData.sessionType}` +
+        (trainingData.sessionType === "Package (5, 10, 20 hours)" ? ` (${trainingData.packageHours} hours)` : '') +
+        (trainingData.sessionType === "Monthly Subscription (1-5 sessions/week)" ? ` (${trainingData.weeklyHours} hours per week)` : '') +
+        `, ${trainingData.dayTime}`,
     };
 
     sendEmail(templateId, variables)
@@ -79,6 +85,7 @@ const Contact = () => {
           trainingType: '',
           sessionType: '',
           packageHours: '',
+          weeklyHours: '',
           dayTime: '',
         });
       })
@@ -231,6 +238,25 @@ const Contact = () => {
                   </select>
                 </div>
               )}
+              {trainingData.sessionType === "Monthly Subscription (1-5 sessions/week)" && (
+              <div>
+                <label htmlFor="weeklyHours" className="block text-sm font-medium text-text mb-2">
+                  Weekly Hours
+                </label>
+                <select
+                  id="weeklyHours"
+                  value={trainingData.weeklyHours}
+                  onChange={(e) => setTrainingData({ ...trainingData, weeklyHours: e.target.value })}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all"
+                  required
+                >
+                  <option value="">Select Weekly Hours</option>
+                  {weeklyHoursOptions.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+            )}
               <div>
                 <label htmlFor="dayTime" className="block text-sm font-medium text-text mb-2">Daytime</label>
                 <select
@@ -256,6 +282,9 @@ const Contact = () => {
           </button>
           {trainingMsg && <div className="mt-4 text-green-600">{trainingMsg}</div>}
         </form>
+        {trainingMsg && (
+        <Notification message={trainingMsg} onClose={() => setTrainingMsg("")} />
+      )}
       </div>
 
       {/* T-Shirt Order Form */}
