@@ -1,11 +1,10 @@
-// Index.tsx
 import ContactButton from '../components/ContactButton';
 import Navbar from '../components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-[#D9D9D9]">
       <Navbar />
       
       {/* Hero Section with Video Background */}
@@ -80,8 +79,8 @@ const Index = () => {
       </div>
 
       {/* Services Section */}
-      <div id="services" className="bg-[#FEFDFB] py-20 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div id="services" className="bg-[#D9D9D9] py-20">
+        <div className="max-w-6xl mx-auto px-8 sm:px-12 lg:px-16">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[#000000] text-center mb-16">
             Our Services
           </h2>
@@ -189,8 +188,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* Additional Sections (Forms, etc.) can go here */}
     </div>
   );
 };
